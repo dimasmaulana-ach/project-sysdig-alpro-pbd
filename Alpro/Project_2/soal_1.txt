@@ -1,0 +1,36 @@
+
+fungction factorial
+
+	kamus
+		n : int
+	algoritma
+		if n = 0 then
+			return 1
+		else
+			return n * factorial(n-1)
+		endif
+
+endfunction
+
+function permutation
+	kamus
+		x, y : int
+	algoritma
+		if x < y then
+			return factorial(y) / factorial(y-x)
+		else
+			return factorial(x) / factorial(x-y)
+		endif
+endfunction
+
+program soal_1
+	kamus
+		x, y : int
+		factorialX, factorialY, permutationResult : int
+	algoritma
+		input(x, y)
+		factorialX <- factorial(x)
+		factorialY <- factorial(y)
+		permutationResult <- permutation(x, y)
+		output(factorialX, factorialY, permutationResult)
+endprogram

@@ -1,0 +1,27 @@
+
+function calculateDiscount
+	kamus
+		totalExpend, diskon: int
+		member: bool
+	algoritma
+		if totalExpend > 100000 && member then
+			diskon = totalExpend / 10
+		else if totalExpend > 100000 && not member then
+			diskon = totalExpend / 20
+		else
+			diskon = 0
+		endif
+
+		return diskon
+endfunction
+
+program main
+	kamus
+		totalExpend, discount, totalBelanjaAkhir: int
+		member: bool
+	algoritma
+		input(totalExpend, member)
+		discount = calculateDiscount(totalExpend, member)
+		totalBelanjaAkhir = totalExpend - discount
+		output(totalBelanjaAkhir)
+endprogram
