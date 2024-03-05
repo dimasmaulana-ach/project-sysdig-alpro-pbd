@@ -1,0 +1,17 @@
+function convertToSeconds
+kamus
+	hour, minute, second, totalSeconds: integer
+algoritma
+	totalSeconds <- (hour * 3600) + (minute * 60) + second
+	return totalSeconds
+endfunction
+
+program main
+kamus
+	hour, minute, second, totalSeconds: integer
+algoritma
+	output("Masukkan waktu dalam format jam, menit, detik:")
+	input(hour, minute, second)
+	totalSeconds <- convertToSeconds(hour, minute, second)
+	output("Hasil konversi:", totalSeconds, "detik")
+endprogram

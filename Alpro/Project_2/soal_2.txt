@@ -1,0 +1,30 @@
+function sumFibonacci
+kamus
+	N, fibSum, prev, curr, i: int
+algoritma
+	if N <= 0 then
+		return 0
+	endif
+
+	fibSum <- 0
+	prev <- 0
+	curr <- 1
+
+	for i <- 1 to N do
+		fibSum <- fibSum + prev
+		prev, curr <- curr, prev + curr
+	endfor
+
+	return fibSum
+endfunction
+
+program Fibonacci
+kamus
+	N, result: int
+algoritma
+	output("Masukkan nilai N: ")
+	input(N)
+
+	result <- sumFibonacci(N)
+	output(result)
+endprogram

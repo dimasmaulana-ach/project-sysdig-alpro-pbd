@@ -1,0 +1,18 @@
+function isTriangle
+kamus
+	a, b, c : integer
+algorithm
+	return (a+b > c) && (a+c > b) && (b+c > a)
+end function
+
+program main
+kamus
+	side1, side2, side3 : integer
+algorithm
+	input(side1, side2, side3)
+	if isTriangle(side1, side2, side3) then
+		output("Segitiga")
+	else
+		output("Bukan segitiga")
+	endif
+endprogram
