@@ -1,0 +1,33 @@
+
+program coach
+kamus
+	targetScore, numSets, totalScore, setsCompleted, setScore: int
+	scores: array[3] of int
+algoritma
+algoritma
+	targetScore <- 70
+	numSets <- 10
+	totalScore <- 0
+	setsCompleted <- 0
+	output("Mencatat Kekonsistenan Memanah")
+	output("Skor per lingkaran dari terluar hingga terdalam: 1, 4, 7, 10")
+	output("Masukkan skor per set latihan (3 kali kesempatan memanah per set), pisahkan dengan spasi:")
+	for setsCompleted <- 1 to numSets do
+		output("Set ke-", setsCompleted, ": ")
+		input(scores[0], scores[1], scores[2])
+
+		setScore <- scores[0] + scores[1] + scores[2]
+		totalScore <- totalScore + setScore
+
+		if setScore = 30 or totalScore >= targetScore then
+			break
+		endif
+	endfor
+
+	output("SELESAI")
+	if totalScore >= targetScore then
+		output("Tercapai pada set ke-", setsCompleted)
+	else
+		output("Atlet tidak mencapai target dalam 10 set.")
+	endif
+endprogram

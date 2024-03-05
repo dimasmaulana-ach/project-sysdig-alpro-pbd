@@ -1,0 +1,43 @@
+
+
+function calculateRegularCarFee
+kamus
+	totalMinutes, extraHours, fee int
+algoritma
+	totalMinutes <- hours*60 + minutes
+	if totalMinutes <= 10 then
+		return 0
+	endif
+	extraHours <- (totalMinutes - 10 + 59) / 60
+	fee <- 5000 + (extraHours-1)*6000
+	return fee
+endfunction
+
+function calculateTruckFee
+kamus
+	fee int
+algoritma
+	return 2 * calculateRegularCarFee(hours, minutes)
+endfunction
+
+procedure main
+kamus
+	carType string
+	hours, minutes int
+	fee int
+algoritma
+	write("Enter car type (regular/truck): ")
+	read(carType)
+	write("Enter parking duration (hours minutes): ")
+	read(hours, minutes)
+	switch carType
+		case "regular"
+			fee <- calculateRegularCarFee(hours, minutes)
+		case "truck"
+			fee <- calculateTruckFee(hours, minutes)
+		default
+			write("Invalid car type")
+			return
+		endswitch
+	write("Parking fee:", fee, "rupiah")
+endprocedure

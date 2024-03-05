@@ -1,0 +1,14 @@
+program RepeatNumber
+kamus
+	N : integer
+	i, j : integer
+algoritma
+	output("Masukkan nilai N: ")
+	input(N)
+	repeat i from 1 to N
+		repeat j from 1 to i
+			output(j, " ")
+		endrepeat
+		output()
+	endrepeat
+endprogram

@@ -1,0 +1,28 @@
+program Museum
+kamus
+	dailyVisitors, prevVisitors, consecutiveIncreases, totalVisitors : integer
+algoritma
+	consecutiveIncreases <- 0
+	output("Museum Visitor Tracker")
+	output("Enter the number of daily visitors (enter -1 to stop):")
+	repeat
+		output("Hari ", consecutiveIncreases+1, ": ")
+		input(dailyVisitors)
+		if dailyVisitors = -1 then
+			break
+		endif
+		totalVisitors <- totalVisitors + dailyVisitors
+		if dailyVisitors > prevVisitors then
+			consecutiveIncreases <- consecutiveIncreases + 1
+			if consecutiveIncreases = 4 then
+				output("Program berhenti karena 3 kali kenaikan berturut-turut, yaitu")
+				break
+			endif
+		else
+			consecutiveIncreases <- 0
+		endif
+		prevVisitors <- dailyVisitors
+	endrepeat
+	output("Jumlah pengunjung:", totalVisitors)
+	output("Program selesai.")
+endprogram

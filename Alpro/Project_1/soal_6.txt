@@ -1,0 +1,16 @@
+program RepeatTriangle
+kamus
+	N : integer
+	i, j : integer
+algoritma
+	input(N)
+	for i <- 1 to N do
+		for j <- 1 to i do
+			write(j, " ")
+		endfor
+		for j <- i - 1 downto 1 do
+			write(j, " ")
+		endfor
+		writeln()
+	endfor
+endprogram
